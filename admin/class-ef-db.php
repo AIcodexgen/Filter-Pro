@@ -1,13 +1,13 @@
 <?php
 if ( ! defined( 'ABSPATH' ) ) exit;
 
-class AFP_DB {
+class EF_DB {
 
     /* ── Table names ── */
-    public static function attorneys_table()    { global $wpdb; return $wpdb->prefix . 'afp_attorneys'; }
-    public static function combos_table()       { global $wpdb; return $wpdb->prefix . 'afp_combinations'; }
-    public static function offices_table()      { global $wpdb; return $wpdb->prefix . 'afp_offices'; }
-    public static function settings_option()    { return 'afp_settings'; }
+    public static function attorneys_table()    { global $wpdb; return $wpdb->prefix . 'ef_attorneys'; }
+    public static function combos_table()       { global $wpdb; return $wpdb->prefix . 'ef_combinations'; }
+    public static function offices_table()      { global $wpdb; return $wpdb->prefix . 'ef_offices'; }
+    public static function settings_option()    { return 'ef_settings'; }
 
     /* ── Install / create tables ── */
     public static function install() {
@@ -50,7 +50,7 @@ class AFP_DB {
 
         /* Seed default data if tables are empty */
         self::maybe_seed();
-        update_option( 'afp_db_version', AFP_VERSION );
+        update_option( 'ef_db_version', EF_VERSION );
     }
 
     public static function deactivate() {}
